@@ -27,7 +27,8 @@
 
 ## 安装方法
 
-见[插件下载安装教程](../tutorial.md)  
+将 `DeathQuery.lxl.js` 拖进 BDS 的 `plugins` 文件夹即可
+
 老旧的 LL 版本加载`DeathQuery.lxl.js`报错的，可以使用`DeathQuery_OldLXL.lxl.js`
 
 ## 配置文件
