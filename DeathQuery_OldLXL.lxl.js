@@ -1,6 +1,6 @@
 /* global mc JsonConfigFile Format */
 // LiteXLoader Dev Helper
-/// <reference path="E:\Coding\bds\.vscode\LLSEDevHelper/Library/JS/Api.js" />
+/// <reference path="../HelperLib/src/index.d.ts"/>
 
 const pluginName = 'DeathQuery';
 
