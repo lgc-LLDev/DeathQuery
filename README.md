@@ -10,18 +10,18 @@
 ### Features
 
 - 死亡时播报  
-  ![示例](https://raw.githubusercontent.com/lgc-LLSEDev/readme/main/DeathQuery/1.png)
+  ![示例](https://media.githubusercontent.com/media/lgc-LLSEDev/readme/main/DeathQuery/1.png)
 - 查询、清空、记录（可以自定义上限）
   - 命令  
-    ![示例](https://raw.githubusercontent.com/lgc-LLSEDev/readme/main/DeathQuery/2.png)
+    ![示例](https://media.githubusercontent.com/media/lgc-LLSEDev/readme/main/DeathQuery/2.png)
   - 简化的命令  
-    ![示例](https://raw.githubusercontent.com/lgc-LLSEDev/readme/main/DeathQuery/3.png)
+    ![示例](https://media.githubusercontent.com/media/lgc-LLSEDev/readme/main/DeathQuery/3.png)
   - 查询界面  
-    ![示例](https://raw.githubusercontent.com/lgc-LLSEDev/readme/main/DeathQuery/4.png)
+    ![示例](https://media.githubusercontent.com/media/lgc-LLSEDev/readme/main/DeathQuery/4.png)
   - 详细信息、伤害来源记录（如果有）  
-    ![示例](https://raw.githubusercontent.com/lgc-LLSEDev/readme/main/DeathQuery/5.png)
+    ![示例](https://media.githubusercontent.com/media/lgc-LLSEDev/readme/main/DeathQuery/5.png)
   - 清空记录  
-    ![示例](https://raw.githubusercontent.com/lgc-LLSEDev/readme/main/DeathQuery/6.png)
+    ![示例](https://media.githubusercontent.com/media/lgc-LLSEDev/readme/main/DeathQuery/6.png)
 
 如果你想给这个插件提建议的话，欢迎在 github 提 issue！
 
