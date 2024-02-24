@@ -20,7 +20,39 @@ const {
   White,
 } = Format;
 
+/**
+ * @typedef {Object} FloatPosData
+ * @property {number} x
+ * @property {number} y
+ * @property {number} z
+ * @property {string} dim
+ * @property {number} dimId
+ */
+/**
+ * @typedef {Object} EntityData
+ * @property {string} name
+ * @property {string} type
+ * @property {number} health
+ * @property {number} maxHealth
+ * @property {FloatPosData} pos
+ */
+/**
+ * @typedef {Object} DeathLogItem
+ * @property {FloatPosData} pos
+ * @property {string} time
+ * @property {EntityData?} src
+ */
+
+/**
+ *
+ * @param {LLSE_Player} pl
+ * @param {LLSE_Entity?} src
+ * @returns {DeathLogItem}
+ */
 function getLogItem(pl, src) {
+  /**
+   * @param {FloatPos} pos
+   */
   function posItem(pos) {
     const { x, y, z, dim, dimid: dimId } = pos;
     return { x, y, z, dim, dimId };
@@ -41,6 +73,12 @@ function getLogItem(pl, src) {
   };
 }
 
+/**
+ *
+ * @param {LLSE_Player} pl
+ * @param {LLSE_Entity?} src
+ * @returns
+ */
 function logDeath(pl, src) {
   const { xuid } = pl;
   const item = getLogItem(pl, src);
@@ -50,6 +88,10 @@ function logDeath(pl, src) {
   return item;
 }
 
+/**
+ * @param {Date} date
+ * @returns {string}
+ */
 function formatDate(date) {
   const yr = date.getFullYear();
   const mon = date.getMonth() + 1;
@@ -60,6 +102,10 @@ function formatDate(date) {
   return `${yr}-${mon}-${day} ${hr}:${min}:${sec}`;
 }
 
+/**
+ * @param {FloatPosData} pos
+ * @returns {string}
+ */
 function formatPos(pos) {
   const { x, y, z, dimId } = pos;
   const dim = (() => {
@@ -82,6 +128,10 @@ function formatPos(pos) {
   );
 }
 
+/**
+ * @param {DeathLogItem} it
+ * @returns {string}
+ */
 function formatDeathFull(it) {
   const { pos, time, src } = it;
   const txt = [];
@@ -105,6 +155,10 @@ function formatDeathFull(it) {
   return txt.join('\n');
 }
 
+/**
+ * @param {DeathLogItem} it
+ * @returns {string}
+ */
 function formatDeathSimple(it) {
   const { pos, time, src } = it;
   let txt =
@@ -116,7 +170,14 @@ function formatDeathSimple(it) {
   return txt;
 }
 
+/**
+ * @param {LLSE_Player} pl
+ */
 function deathLogForm(pl) {
+  /**
+   * @param {DeathLogItem[]} log
+   * @returns {(pl_: LLSE_Player, i: number?) => any}
+   */
   function deathLogFullForm(log) {
     return (pl_, i) => {
       if (i !== null && i !== undefined) {
@@ -134,6 +195,7 @@ function deathLogForm(pl) {
     };
   }
 
+  /** @type {DeathLogItem[]} */
   const log = deathLog.get(pl.xuid, []);
   let form = mc.newSimpleForm().setTitle(`${Bold}${Green}死亡记录查询`);
 
@@ -152,6 +214,9 @@ function deathLogForm(pl) {
   pl.sendForm(form, deathLogFullForm(log));
 }
 
+/**
+ * @param {LLSE_Player} pl
+ */
 function clearLog(pl) {
   pl.sendModalForm(
     '提示',
@@ -214,9 +279,12 @@ mc.listen('onPlayerDie', (pl, src_) => {
       `${DarkGreen}使用 ${Bold}${MinecoinGold}/deathlog${Clear} 查看最近死亡记录`
   );
 });
-registerCmd();
 
-ll.registerPlugin(pluginName, '自助查询死亡记录', [0, 1, 3], {
+mc.listen('onServerStarted', () => {
+  registerCmd();
+});
+
+ll.registerPlugin(pluginName, '自助查询死亡记录', [0, 1, 4], {
   Author: 'student_2333',
   License: 'Apache-2.0',
 });

@@ -27,9 +27,9 @@
 
 ## 安装方法
 
-将 `DeathQuery.lxl.js` 拖进 BDS 的 `plugins` 文件夹即可
-
-老旧的 LL 版本加载`DeathQuery.lxl.js`报错的，可以使用`DeathQuery_OldLXL.lxl.js`
+```shell
+lip install github.com/lgc-LLDev/DeathQuery
+```
 
 ## 配置文件
 
@@ -71,9 +71,14 @@ QQ：3076823485
 
 ## 更新日志
 
-- 0.1.1
-  - 修复指令权限
-- 0.1.2
-  - 修复显示的日期少了一个月的 bug
-- 0.1.3
-  - 修复天数显示错误
+### 0.1.3
+
+- 修复天数显示错误
+
+### 0.1.2
+
+- 修复显示的日期少了一个月的 bug
+
+### 0.1.1
+
+- 修复指令权限
