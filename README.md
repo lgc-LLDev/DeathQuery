@@ -39,7 +39,7 @@ lip install github.com/lgc-LLDev/DeathQuery
 ```jsonc
 {
   // 记录数上限（上限无法关闭）
-  "maxRecords": 5
+  "maxRecords": 5,
 }
 ```
 
